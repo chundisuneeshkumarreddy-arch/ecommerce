@@ -1,6 +1,27 @@
 # EcommerceApp
 
-E-commerce REST API built with Node.js, Express, and MongoDB. JWT-based authentication with role-based access (user/admin), product management, and Swagger documentation included.
+A backend REST API for an e-commerce platform built with Node.js, Express, and MongoDB. It provides secure user authentication, product catalog management with publish/unpublish workflow, and an admin dashboard API for user management — all documented with interactive Swagger UI.
+
+## About
+
+This project is the backend for an e-commerce application. It models a real-world online store where:
+
+- **Customers (users)** register, log in, and browse the product catalog (only published products are visible to them).
+- **Store admins** manage the full catalog (create, update, delete, publish/unpublish products) and manage user accounts and roles.
+
+Authentication is token-based (JWT) and every protected route enforces role-based access control, so a normal user can never reach admin-only operations. The API is RESTful and JSON-based, so it can be consumed by any frontend (web, mobile, or Postman).
+
+## Features
+
+- **JWT authentication** with password hashing (bcrypt) and 1-day token expiry
+- **Role-based access control** — `admin` vs `user` enforced via middleware
+- **Product management** — full CRUD plus publish/unpublish workflow
+- **Smart product listing** — filter by category and price, sort by price/newest, pagination
+- **Published-only visibility** — normal users see only published products; admins see everything
+- **User management (admin)** — list, view, change roles, delete users
+- **Interactive Swagger UI** at `/api-docs` to explore and test every endpoint
+- **Seed script** to bootstrap an admin account instantly
+- **Postman collection** (`ecommerce.postman_collection.json`) included for quick testing
 
 ## Tech Stack
 
